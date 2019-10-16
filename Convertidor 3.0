@@ -1,0 +1,73 @@
+# 1er. Programa en Python 3.7.4 terminado el 27 de 
+# Septiembre 12:45, Ver.2.b de Convertidor.
+#============================================================
+    
+##---- Indicador de ciclo de re_inicio del Calculo.
+calc = True
+
+##----Ciclo de Calculo del prog, 1er [while].
+while calc:    
+    
+#============================================================
+    
+    # Caratula de Entrada.
+    print ('\n........................................'  )
+    print ('\n   Seleccione el número de la Unidad    '  )
+    print ('        a convertir y su cantidad.        '  )
+    print ('........................................  '  ) 
+    print ('\n    1 - Metros  |    2 - Kilos          '  )
+    print (  '    3 - Pies    |    4 - Libras         '  )
+    print (  '    5 - C       |    6 - Farenheit      '  )
+    print ('\n::::::::::::::::::::::::::::::::::::::::\n') 
+
+    ###-----lista del Selector.
+    num_L = ['1','2','3','4','5','6']
+
+    # ----- Verificador de Entrada.
+    unidadTipo = int(input('  Unidad a Convertir:  '))
+
+    while int(unidadTipo) > int(6):
+
+      print('Es Numero Mayor:')
+      unidadTipo = int(input())
+    else:
+      print ('  Selección Correcta: ')
+
+    # Input
+    print ()
+    print ()
+    #unidadTipo = input ('  Unidad a Convertir:  ')
+    cantidad   = input ('            Cantidad:  ')
+
+    ###-----Comprobacion de Entrada.
+    if  str(unidadTipo) in num_L:
+
+    # Listas de Selectores de Medidas.
+        unidad  = ['x',' Metros', ' Kilos', ' Pies', ' Libras', ' Centigrados', ' Farenheit'  ]
+        unidad1 = ['x',' Pies', ' Libras', ' Metros', ' Kilos', ' Farenheit', ' Centigrados'  ]
+        unidad2 = ['x', round( ( float(cantidad)  * 3.28084 )     ,2), round( (float(cantidad) * 2.20462   )     ,2), 
+                        round( ( float(cantidad)  *  .3048  )     ,2), round( (float(cantidad) *  .453592  )     ,2), 
+                        round( ((float(cantidad) * (9/5)) + 32)   ,2), round( (float(cantidad) - 32) * (5/9)     ,2)   ]                               
+
+
+    # CALCULO.
+        resultado  =  (  unidad2[  int(unidadTipo)  ]  ) 
+
+    # Caratula de Salida.
+        print ('           ' + 'Resultado:  ' + str(resultado) + ' ' + unidad1[int(unidadTipo)] )
+
+        print ('\n:::::::::::::::::::::::::::::::::::::::')
+
+    ###----- Salida por error.    
+    else:
+        print('Datos Incorrectos Reinicie el Calculo.')    
+
+#=======================================================================        
+
+    de_nvo = str(input("Otro Calculo?, Seleccione s/n:  "))
+    if de_nvo == "n":
+      calc = False       
+        
+        
+    print ('\nGracias por usar el programa.')    
+    print ('\nEoF')
